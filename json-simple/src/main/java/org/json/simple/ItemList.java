@@ -40,6 +40,7 @@ public class ItemList {
 	}
 	
 	public String[] getArray(){
+		// Should check, if it is a String object
 		List<String> stringItems = new ArrayList<String>();
 		for(Object object : this.items) {
 			if(object instanceof String) {
