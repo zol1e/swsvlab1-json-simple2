@@ -40,7 +40,19 @@ public class ItemList {
 	}
 	
 	public String[] getArray(){
-		return (String[])this.items.toArray();
+		// Should check, if it is a String object
+		List<String> stringItems = new ArrayList<String>();
+		for(Object object : this.items) {
+			if(object instanceof String) {
+				stringItems.add((String)object);
+			}
+		}
+		String[] items = new String[stringItems.size()];
+		for(int i = 0; i < stringItems.size(); i++) {
+			items[i] = stringItems.get(i);
+		}
+		
+		return items;
 	}
 	
 	public void split(String s,String sp,List append,boolean isMultiToken){
